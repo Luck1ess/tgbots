@@ -1,7 +1,4 @@
-#[macro_use]
-extern crate lazy_static;
 use std::env;
-
 use teloxide::{
     dispatching::dialogue::{
         serializer::Json,
@@ -27,7 +24,6 @@ const URL: &str = "http://api.weatherapi.com/v1/";
 fn get_url_token() -> String{
     return env::var("URL_TOKEN").unwrap();
 }
-// const URL_TOKEN: &str = "9174d97aa059439f97784657241606";
 
 #[derive(Clone, Default, serde::Serialize, serde::Deserialize)]
 pub enum State {
